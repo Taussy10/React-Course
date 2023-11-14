@@ -1,0 +1,4 @@
+Redux Toolkit
+1. Store: global file from where anyhting can be taken
+2.Reducer: We have many store, sustores with Reducer we will do functioality
+3. Method: useSelector: for selecting , useDispatch: for sending data (We dispath courier from one place to another)
