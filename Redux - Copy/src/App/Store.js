@@ -13,5 +13,3 @@ import { configureStore } from "@reduxjs/toolkit";
 export const store = configureStore({
   reducer: TodoSlice
 })
-
-// export default store;

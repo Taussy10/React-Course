@@ -3,6 +3,7 @@ import FoodData from "../../Data/Data";
 
 const FoodItems = () => {
   return (
+    // Saare card to flex kr diya
     <div
       className=" flex flex-wrap  gap-10
      mx-10 justify-center my-10
@@ -15,7 +16,7 @@ const FoodItems = () => {
             <FoodCard
               key={food.id}
               id={food.id}
-              image={food.img}
+              img={food.img}
               name={food.name}
               price={food.price}
               desc={food.desc}

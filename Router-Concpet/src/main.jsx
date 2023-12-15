@@ -10,6 +10,7 @@ import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 
 
+// another way to write
 // const router = createBrowserRouter([{
 //   // fixed comps will be render cause it's fixed in Layout.jsx also layout is main comp
 // path: '/',

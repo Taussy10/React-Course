@@ -10,7 +10,7 @@ const Navbar = () => {
  <h1 className="  text-xl font-bold text-gray-600">{ 
  new Date().toUTCString().slice(0,17) } </h1> 
   
-  <h1 className=" text-2xl font-bold">Corona Food Outlet</h1>
+  <h1 className=" text-2xl font-bold">Pizza Food Outlet</h1>
     </div>
 
 

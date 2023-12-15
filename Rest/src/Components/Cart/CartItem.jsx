@@ -1,32 +1,44 @@
 import {AiFillDelete} from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import {GrSubtractCircle  } from "react-icons/gr";
+import Data from '../../Data/Data'
+import FoodData from "../../Data/Data";
+import { useState } from "react";
 
-const CartItem = ({image,name,price}) => {
+const CartItem = ({id, img ,name,price,qty  }) => {
+  const [cartDelte, setCartDelte] = useState(true)
   return (
     // Card
-    <div className=" flex gap-2 mb-3  shadow-md rounded-lg p-1">
+    // I don't know what is leading-2 but it made look better so used it 
+    <div className= {` leading-2 flex gap-2 mb-4  shadow-md rounded-lg p-1 
+    ${cartDelte ?"translate-x-0":"translate-x-full"} `}>
 {/* Image */}
 <div className="">
-  <img className=" w-[50px]  h-[50px]" src= {image} alt="" />
+  <img className={` w-[50px]  h-[50px] ${cartDelte ?"translate-x-0":"translate-x-full"} `} src= {img} alt="" />
 </div>
 
 {/* Features */}
 <div className="">
   {/* upper */}
   <div className=" flex justify-between gap-[6.75rem]">
+      <AiFillDelete onClick={()=> setCartDelte(false)} className=" absolute right-4 hover:text-red-500 "/> 
   <h1 className="   text-gray-800 font-semibold">{name}</h1>
-  <AiFillDelete className=" absolute right-4 hover:text-red-500 "/>
+
   </div>
 {/* Lower */}
   <div className=" flex justify-between ">
     <span className=" text-green-500"> ₹{price}</span>
     {/* Inc/Dec comp */}
     <div className=" flex   absolute right-0 items-center "> 
-    
-    <GrSubtractCircle className="  mx-1     font-bold  rounded-lg hover:bg-red-500 cursor-pointer "/>
-   <span className="  font-semibold  text-green-500">1</span> 
-   <AiOutlinePlusCircle className=" font-bold   text-gray-700 mx-1 rounded-lg  cursor-pointer hover:bg-green-500 "/> 
+
+{/* Add/Remove section */}
+    <div className=" flex  items-center  mr-2 "> 
+    <AiOutlinePlusCircle className=" font-bold   text-gray-700 mx-1 rounded-lg  cursor-pointer hover:bg-green-500 "/> 
+
+   <span className="  font-semibold  text-green-500    ">{qty}</span> 
+   <GrSubtractCircle className="  mx-1     font-bold  rounded-lg hover:bg-red-500 cursor-pointer "/>
+
+   </div>
     </div>
   </div>
 </div>
